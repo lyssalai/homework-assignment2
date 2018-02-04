@@ -120,5 +120,11 @@ which(sums,arr.ind=TRUE)
 #8) Calculate:
 
 #(a) $\sum\limits_{i=1}^{20} \sum\limits_{j=1}^5 \frac{i^4}{(3+j)}$
-
 sum(outer((1:20)^4,3+(1:5),"/"))
+
+#(b) $\sum\limits_{i=1}^{20} \sum\limits_{j=1}^5 \frac{i^4}{(3+ij)}$
+sum((1:20)^4/(3+outer(1:20,1:5,"*")))
+
+#(c) $\sum\limits_{i=1}^{10} \sum\limits_{j=1}^i \frac{i^4}{(3+ij)}$
+sum(outer(1:10,1:10,function(i,j){(i>=j)*i^4/(3+i*j)}))
+
