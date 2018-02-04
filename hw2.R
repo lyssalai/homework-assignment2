@@ -111,6 +111,7 @@ which(apply(D,1,function(y){sum(y==7)==2}))
 #so, for example, the row (1,2) in the output matrix means that the sum of columns 1 and 2 in the original matrix is greater than 75.
 #Repeating a column is permitted;
 #so, for exalmple, the final output matrix could contain the rows (1,2), (2,1), and (2,2).
+<<<<<<< HEAD
 which(outer(colSums(D),colSums(D),"+")>75,arr.ind=TRUE)
 #What if repetitions are not permitted?
 sums <- outer(colSums(D),colSums(D),"+")>75
@@ -127,4 +128,10 @@ sum((1:20)^4/(3+outer(1:20,1:5,"*")))
 
 #(c) $\sum\limits_{i=1}^{10} \sum\limits_{j=1}^i \frac{i^4}{(3+ij)}$
 sum(outer(1:10,1:10,function(i,j){(i>=j)*i^4/(3+i*j)}))
+=======
+
+
+
+
+>>>>>>> 1af6e5a2eb76f499e15ea0d5b0784d051a9e9961
 
